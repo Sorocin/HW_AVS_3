@@ -6,39 +6,36 @@ from extender import *
 startTime = time.time()  # время начала замера
 
 if __name__ == '__main__':
-    if sys.argv[1] == "-f":
-        if len(sys.argv) != 5:
-            print("Incorrect command line! Waited command -f infile outfile01 outfile02 \n"
-                  "or \n"
-                  "command -n number outfile01 outfile02")
-            exit()
-        else:
-            inputFileName = sys.argv[2]
-            outputFileName_01 = sys.argv[3]
-            outputFileName_02 = sys.argv[4]
-            ifile = open(inputFileName)
-            str = ifile.read()
-            ifile.close()
+    if len(sys.argv) != 5:
+        print("Incorrect command line! Waited command -f infile outfile01 outfile02 \n"
+              "or \n"
+              "command -n number outfile01 outfile02")
+        exit()
+    elif sys.argv[1] == "-f":
+        inputFileName = sys.argv[2]
+        outputFileName_01 = sys.argv[3]
+        outputFileName_02 = sys.argv[4]
+        ifile = open(inputFileName)
+        str = ifile.read()
+        ifile.close()
 
-            # Формирование массива строк, содержащего чистые данные в виде массива строк символов.
-            strArray = str.replace("\n", " ").split(" ")
+        # Формирование массива строк, содержащего чистые данные в виде массива строк символов.
+        strArray = str.replace("\n", " ").split(" ")
 
-            print('==> Start')
+        print('==> Start')
 
-            container = Container()
-            figNum = read_str_array(container, strArray)
-            container.print()
+        container = Container()
+        figNum = read_str_array(container, strArray)
+        container.print()
 
-            ofile = open(outputFileName_01, 'w')
-            ofile_02 = open(outputFileName_02, 'w')
-            container.write(ofile)
-            container.shell_print()
-            container.shell_write(ofile_02)
-            ofile.close()
-            ofile_02.close()
-
-            print('==> Finish')
-
+        ofile = open(outputFileName_01, 'w')
+        ofile_02 = open(outputFileName_02, 'w')
+        container.write(ofile)
+        container.shell_print()
+        container.shell_write(ofile_02)
+        ofile.close()
+        ofile_02.close()
+        print('==> Finish')
     elif sys.argv[1] == "-n":
         if len(sys.argv) != 5:
             print("Incorrect command line! Waited command -f infile outfile01 outfile02 \n"
