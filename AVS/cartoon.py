@@ -20,6 +20,12 @@ class Cartoon:
         return i
 
     def print(self):
+        if self.type == 1 or self.type == "Draw":
+            self.type = "Draw"
+        elif self.type == 2 or self.type == "Puppet":
+            self.type = "Puppet"
+        else:
+            self.type = "Plasticine"
         print("Cartoon: name = ", self.name, "year = ", self.year, "type = ", self.type,
               "task = ", self.task())
 
@@ -27,11 +33,16 @@ class Cartoon:
         ostream.write("Cartoon: name = {}  year = {}  type = {}, task = {}".
                       format(self.name, self.year, self.type, self.task()))
 
-    def random_print(self):
+    def random_print(self, digit):
         r = Random()
+        if digit == 1:
+            self.type = "Draw"
+        elif digit == 2:
+            self.type = "Puppet"
+        else:
+            self.type = "Plasticine"
         self.name = r.generate_random_string(10)
         self.year = r.generate_random_int(1900, 2022)
-        self.type = r.generate_random_int(1, 3)
         print("Cartoon: name = ", self.name, "year = ", self.year, "type = ", self.type,
               "task = ", self.task())
 

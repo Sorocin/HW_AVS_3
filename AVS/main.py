@@ -27,12 +27,12 @@ if __name__ == '__main__':
 
             container = Container()
             figNum = read_str_array(container, strArray)
-            container.print()
+            # container.print()
 
             ofile = open(outputFileName_01, 'w')
             ofile_02 = open(outputFileName_02, 'w')
             container.write(ofile)
-            container.shell_print()
+            # container.shell_print()
             container.shell_write(ofile_02)
             ofile.close()
             ofile_02.close()

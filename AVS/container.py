@@ -21,6 +21,7 @@ class Container:
         for movie in self.store:
             movie.write(ostream)
             ostream.write("\n")
+        self.shell()
 
     def shell_print(self):
         for movie in self.store:
@@ -35,13 +36,14 @@ class Container:
     def random_print(self, count):
         for i in range(int(count)):
             digit = random.randint(1, 3)
+            typeof = random.randint(1, 3)
             if digit == 1:
                 game = Game()
                 game.random_print()
                 self.store.append(game)
             elif digit == 2:
                 cartoon = Cartoon()
-                cartoon.random_print()
+                cartoon.random_print(typeof)
                 self.store.append(cartoon)
             elif digit == 3:
                 documentary = Documentary()

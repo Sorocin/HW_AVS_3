@@ -38,8 +38,6 @@ class Game:
         ostream.write("Game: name = {}  year = {}  producer = {}, Perimeter = {}".
                       format(self.name, self.year, self.producer, self.task()))
 
-
-
     def task(self):
         ans = 0.0
         ans = self.year / len(self.name)
