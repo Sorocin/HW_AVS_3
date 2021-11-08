@@ -1,0 +1,4 @@
+Container is store 3 movies:
+Documentary: name = Bobi  year = 2010  duration = 200, task = 502.5
+Documentary: name = Junior  year = 2021  duration = 135, task = 336.8333333333333
+Game: name = Tenet  year = 2020  producer = Nolan, Perimeter = 404.0

@@ -1,0 +1,4 @@
+Container is store 3 movies:
+Documentary: name = vdvtfcypgy  year = 1974  duration = 270, task = 197.4
+Cartoon: name = izsuuaomjs  year = 1942  type = 2, task = 194.2
+Game: name = srqytuityt  year = 1983  producer = zwidmoybfv, Perimeter = 198.3
